@@ -21,4 +21,6 @@
     <string name="third_per">Mark  Ruffalo</string>
     <string name="fourth_per">Chris Hemsworth</string>
     <string name="reviews">125 Reviews</string>
+    <string name="name_movies">Avengers: End Game</string>
+    <string name="last_of_movie">147 min</string>
 </resources>
