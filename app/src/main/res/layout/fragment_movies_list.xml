@@ -1,146 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
+<androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:cardview="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_margin="5dp"
-    cardview:cardCornerRadius="10dp">
-    <LinearLayout
-        android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black_ground">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/ivRecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/black_ground">
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:listitem="@layout/view_holder_movie"
+        android:layout_margin="8dp"
+        tools:itemCount="10"
+        tools:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        tools:orientation="vertical"
+        tools:spanCount="2"/>
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/gradient">
-
-            <ImageView
-                android:id="@+id/movies_img"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scaleType="centerCrop"
-                android:src="@drawable/movie"
-                android:foreground="@drawable/gradient_img"
-                cardview:layout_constraintBottom_toBottomOf="parent"
-                cardview:layout_constraintEnd_toEndOf="parent"
-                cardview:layout_constraintHorizontal_bias="0.0"
-                cardview:layout_constraintStart_toStartOf="parent"
-                cardview:layout_constraintTop_toTopOf="parent"
-                cardview:layout_constraintVertical_bias="0.0" />
-
-            <ImageView
-                android:id="@+id/background_pg"
-                android:layout_width="25dp"
-                android:layout_height="0dp"
-                android:layout_marginTop="6dp"
-                android:layout_marginBottom="65dp"
-                android:src="@drawable/rectangle"
-                cardview:layout_constraintEnd_toEndOf="@+id/movies_img"
-                cardview:layout_constraintHorizontal_bias="0.047"
-                cardview:layout_constraintStart_toStartOf="parent"
-                cardview:layout_constraintTop_toTopOf="parent"
-                cardview:layout_constraintVertical_bias="0.03" />
-
-            <TextView
-                android:id="@+id/pg_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_bold"
-                android:text="13+"
-                android:textColor="@color/white"
-                android:textStyle="bold"
-                cardview:layout_constraintBottom_toBottomOf="parent"
-                cardview:layout_constraintEnd_toEndOf="parent"
-                cardview:layout_constraintHorizontal_bias="0.049"
-                cardview:layout_constraintStart_toStartOf="@+id/movies_img"
-                cardview:layout_constraintTop_toTopOf="@+id/movies_img"
-                cardview:layout_constraintVertical_bias="0.035" />
-
-            <TextView
-                android:id="@+id/content"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/tag"
-                android:textColor="@color/content_color"
-                android:textSize="10dp"
-                cardview:layout_constraintBottom_toBottomOf="parent"
-                cardview:layout_constraintEnd_toEndOf="parent"
-                cardview:layout_constraintHorizontal_bias="0.142"
-                cardview:layout_constraintStart_toStartOf="@+id/movies_img"
-                cardview:layout_constraintTop_toTopOf="@+id/movies_img"
-                cardview:layout_constraintVertical_bias="0.887" />
-
-            <RatingBar
-                android:id="@+id/ratingBar2"
-                style="?android:attr/ratingBarStyleSmall"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:numStars="5"
-                android:progressBackgroundTint="@color/white"
-                android:progressTint="@color/content_color"
-                android:rating="4"
-                android:stepSize="0.5"
-                cardview:layout_constraintBottom_toBottomOf="parent"
-                cardview:layout_constraintEnd_toEndOf="parent"
-                cardview:layout_constraintHorizontal_bias="0.081"
-                cardview:layout_constraintStart_toStartOf="parent"
-                cardview:layout_constraintTop_toTopOf="@+id/movies_img"
-                cardview:layout_constraintVertical_bias="0.956" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/reviews"
-                android:textColor="@color/review_color"
-                android:textSize="10sp"
-                android:textStyle="bold"
-                cardview:layout_constraintBottom_toBottomOf="@+id/movies_img"
-                cardview:layout_constraintEnd_toEndOf="parent"
-                cardview:layout_constraintHorizontal_bias="0.304"
-                cardview:layout_constraintStart_toEndOf="@+id/ratingBar2"
-                cardview:layout_constraintTop_toTopOf="@+id/movies_img"
-                cardview:layout_constraintVertical_bias="0.956" />
-
-            <ImageView
-                android:layout_width="18dp"
-                android:layout_height="18dp"
-                android:src="@drawable/like"
-                cardview:layout_constraintBottom_toBottomOf="parent"
-                cardview:layout_constraintEnd_toEndOf="parent"
-                cardview:layout_constraintHorizontal_bias="0.891"
-                cardview:layout_constraintStart_toStartOf="parent"
-                cardview:layout_constraintTop_toTopOf="@+id/movies_img"
-                cardview:layout_constraintVertical_bias="0.039" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <TextView
-            android:id="@+id/movie_title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="#FFFFFF"
-            android:gravity="left"
-            android:textSize="12sp"
-            android:paddingTop="5dp"
-            android:paddingBottom="5dp"
-            android:paddingLeft="10dp"
-            android:text="@string/name_movies"
-            android:textStyle="bold"/>
-
-        <TextView
-            android:id="@+id/movie_time"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto_bold"
-            android:gravity="left"
-            android:paddingLeft="10dp"
-            android:paddingBottom="5dp"
-            android:text="@string/last_of_movie"
-            android:textColor="#9A9696"
-            android:textSize="10sp" />
-    </LinearLayout>
-
-</androidx.cardview.widget.CardView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

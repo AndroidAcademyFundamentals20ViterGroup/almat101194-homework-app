@@ -10,4 +10,5 @@
     <color name="black_ground">#191926</color>
     <color name="content_color">#FF3466</color>
     <color name="review_color">#6D6D80</color>
+    <color name="text_red">#FF3466</color>
 </resources>
